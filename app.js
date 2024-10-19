@@ -30,8 +30,6 @@ const ONEWEEK = 1000 * 60 * 60 * 24 * 7;
 
 const app = express();
 
-
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -45,6 +43,13 @@ app.use(
 );
 
 app.use(cookieParser());
+
+app.use(
+  cors({
+    origin: CLIENT_URL,
+    credentials: true,
+  })
+);
 
 app.use('/api/login', loginRouter);
 app.use('/api/register', registerRouter);
