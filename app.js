@@ -31,10 +31,7 @@ const ONEWEEK = 1000 * 60 * 60 * 24 * 7;
 const app = express();
 
 
-app.use(cors({
-  origin: '*',  // Allow all origins
-}));
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
