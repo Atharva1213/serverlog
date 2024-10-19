@@ -44,12 +44,7 @@ app.use(
 
 app.use(cookieParser());
 
-app.use(
-  cors({
-    origin: CLIENT_URL,
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use('/api/login', loginRouter);
 app.use('/api/register', registerRouter);
